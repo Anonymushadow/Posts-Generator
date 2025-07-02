@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/Normalize.css">
+    <link rel="stylesheet" href="./styles/Reset.main.css">
+    <link rel="stylesheet" href="./styles/Variables.main.css">
+    <link rel="stylesheet" href="./styles/Tipografias.main.css">
+    <link rel="stylesheet" href="./styles/Layout.main.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="content__container">
+        <section class="posts__container"></section>
+        <aside class="input__tools__container">
+            <div class="input__tool">
+                <input class="input__tool__title" type="text" placeholder="Título">
+            </div>
+            <div class="input__tool">
+                <textarea class="input__tool__text" placeholder="Texto"></textarea>
+            </div>
+            <div class="input__tool">
+                <input class="input__tool__img" type="file">
+            </div>
+            <div class="input__tool">
+                <button class="input__tool__button">Crear</button>
+            </div>
+            <div class="input__tool">
+                <button class="input__tool__download">Descargar</button>
+            </div>
+            <div class="input__tool">
+                <label>Alineación</label>
+                <div style="display: flex; gap: 1rem;">
+                    <label><input type="radio" name="align" value="left" checked> Izquierda</label>
+                    <label><input type="radio" name="align" value="center"> Centro</label>
+                    <label><input type="radio" name="align" value="right"> Derecha</label>
+                </div>
+            </div>
+            <div class="input__tool">
+                <label>Tipo</label>
+                <select class="input__tool__type">
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes - 1">Martes - 1</option>
+                    <option value="Martes - 2">Martes - 2</option>
+                    <option value="Miercoles">Miércoles</option>
+                    <option value="Jueves - 1">Jueves - 1</option>
+                    <option value="Jueves - 2">Jueves - 2</option>
+                    <option value="Viernes">Viernes</option>
+                </select>
+            </div>
+        </aside>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script type="module" src="./main.mjs"></script>
+</body>
+</html>

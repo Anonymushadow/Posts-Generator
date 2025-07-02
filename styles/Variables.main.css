@@ -1,0 +1,120 @@
+/* =============================== */
+/*         TIPOGRAFÍAS Y TAMAÑOS   */
+/* =============================== */
+:root {
+  /* Font */
+  --font__primary: 'Lora', serif;
+  --font__secondary: 'CinzelDecorative', serif;
+
+  --font-size__h1: clamp(32px, 7vw, 74px);
+  --font-size__h2: clamp(28px, 5vw, 47px);
+  --font-size__h3: clamp(18px, 3vw, 24px);
+  --font-size__body: clamp(16px, 2.5vw, 20px);
+  --font-size__medium: clamp(15px, 2vw, 18px);
+  --font-size__small: clamp(14px, 1.8vw, 16px);
+}
+
+/* ============================= */
+/*           COLORES             */
+/* ============================= */
+:root {
+  /* Colores principales base (lisos) */
+  --color__primary__liso: #4e0789;
+  --color__secondary__liso: #ffffff;
+
+  /* Colores degradados */
+  --color__primary: linear-gradient(
+    to bottom,
+    #1b0033,
+    #4e0789,
+    #1b0033
+  ); /* Violeta metalizado */
+  --color__secondary: linear-gradient(
+    to bottom,
+    #7d7d7d,
+    #e8e8e8,
+    #7d7d7d
+  ); /* Plateado */
+
+  /* Neutrales */
+  --color__blanco__estatico: #ffffff;
+  --color__gris__estatico: #a0a0a0;
+  --color__negro__estatico: #000000;
+}
+
+/* ============================= */
+/*         ESPACIADOS            */
+/* ============================= */
+:root {
+  --spacing__xs: clamp(0.75rem, 0.7vw, 1.25rem);    /* 12px – 20px */
+  --spacing__sm: clamp(1rem, 1vw, 2rem);            /* 16px – 32px */
+  --spacing__md: clamp(2rem, 2.5vw, 4rem);          /* 32px – 64px */
+  --spacing__lg: clamp(4rem, 5vw, 8rem);            /* 64px – 128px */
+  --spacing__xl: clamp(6rem, 8vw, 12rem);           /* 96px – 192px */
+}
+
+/* ============================= */
+/*           SOMBRAS             */
+/* ============================= */
+:root {
+  /* Shadows */
+  --shadow__light: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow__medium: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow__dark: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================= */
+/*           BORDES              */
+/* ============================= */
+:root {
+  /* Borders */
+  --border-radius__sm: 0.25rem;
+  --border-radius__md: 0.5rem;
+  --border-radius__lg: 0.9rem;
+  --border-radius__full: 50%;
+}
+
+/* ============================= */
+/*           TRANSICIONES        */
+/* ============================= */
+:root {
+  /* Transitions */
+  --transition__fast: 0.2s ease-in-out;
+  --transition__normal: 0.3s ease-in-out;
+  --transition__slow: 0.5s ease-in-out;
+}
+
+/* ============================= */
+/*           OPACIDAD            */
+/* ============================= */
+:root {
+  /* Opacity */
+  --opacity__disabled: 0.5;
+  --opacity__hover: 0.85;
+  --opacity__full: 1;
+}
+
+/* ============================= */
+/*           Z-INDEX             */
+/* ============================= */
+:root {
+  /* Z-Index */
+  --z-index__base: 1;
+  --z-index__modal: 1000;
+  --z-index__tooltip: 2000;
+}
+
+/* ============================= */
+/*           TAMAÑOS VARIOS      */
+/* ============================= */
+:root {
+  /* Sizes */
+  --max-width__content: clamp(320px, 90vw, 1200px);
+  --line-height__base: clamp(1.4, 1.6, 1.8)
+}
+
+@media (min-width: 769px) {
+  :root {
+    --line-height__base: 1.8lh;
+  }
+}

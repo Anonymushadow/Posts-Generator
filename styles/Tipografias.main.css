@@ -1,0 +1,116 @@
+/* =============================== */
+/*         FONT-FAMILY             */
+/* =============================== */
+@font-face {
+  font-family: 'CinzelDecorative';
+  src: url('./fonts/CinzelDecorative-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CinzelDecorative';
+  src: url('./fonts/CinzelDecorative-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: var(--font__primary);
+}
+
+button,
+h1,
+h2,
+h3,
+span {
+  font-family: var(--font__secondary);
+}
+
+/* =============================== */
+/*         TAMAÑOS                 */
+/* =============================== */
+h1 {
+  font-size: var(--font-size__h1);
+}
+
+h2 {
+  font-size: var(--font-size__h2);
+}
+
+h3 {
+  font-size: var(--font-size__h3);
+}
+
+h6 {
+  font-size: var(--font-size__small);
+}
+
+label,
+p {
+  font-size: var(--font-size__body);
+}
+
+button,
+h5 {
+  font-size: var(--font-size__medium);
+}
+
+/* =============================== */
+/*         OTROS                   */
+/* =============================== */
+label {
+  display: inline-block;
+}
+
+/* =============================== */
+/*         COLORES                 */
+/* =============================== */
+button,
+h1,
+h2,
+h3,
+.gradient__primary__text {
+  color: var(--color__primary__liso);
+}
+
+a,
+h5,
+h6,
+span
+.gradient__secondary__text {
+  color: var(--color__secondary__liso);
+}
+
+h3, p {
+  white-space: pre-line;
+}
+
+@supports (-webkit-background-clip: text) {
+  .gradient__primary__text {
+    background: var(--color__primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient__secondary__text {
+    background: var(--color__secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

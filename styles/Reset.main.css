@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}

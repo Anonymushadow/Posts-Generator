@@ -1,0 +1,327 @@
+/* ------------------------------------------------------------------------------------ */
+/* Movimiento del scroll */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------------------------------------------
+/* Selection */
+::selection {
+  background-color: var(--color__primary__liso);
+  color: var(--color__neutral-1);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Scrollbar */
+/* Webkit: Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Thumb: parte del scrollbar que el usuario puede arrastrar */
+::-webkit-scrollbar-thumb {
+  background: var(--color__primary);
+  border-radius: var(--border-radius__sm);
+  border: 2px solid var(--color__neutral-2);
+}
+
+/* Track: es el fondo donde se mueve el thumb */
+::-webkit-scrollbar-track {
+  background: var(--color__neutral-1);
+  border-radius: var(--border-radius__sm);
+}
+
+/* Corner: es donde se encuentran los scrollbars horizontales y verticales */
+::-webkit-scrollbar-corner {
+  background: var(--color__neutral-1);
+}
+
+/* Firefox support */
+* {
+  scrollbar-color: var(--color__primary) var(--color__neutral-1);
+  scrollbar-width: thin; /* auto | thin | none */
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Body y HTML */
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color__neutral-1);
+  color: var(--color__neutral-3);
+  justify-content: space-between;
+}
+
+
+/* ------------------------------------------------------------------------------------ */
+/* Botones */
+.button__default__styles {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  outline: 0;
+  border: none;
+  vertical-align: middle;
+  position: relative;
+  padding: calc(var(--spacing__sm) + 0.1rem) var(--spacing__md);
+}
+
+.button__small {
+  padding: calc(var(--spacing__sm) - 0.13rem) calc(var(--spacing__md) - 0.23rem);
+}
+
+.button__medium {
+  padding: calc(var(--spacing__sm) + 0.1rem) var(--spacing__md);
+}
+
+.button__large {
+  padding: calc(var(--spacing__md) - 0.23rem) var(--spacing__lg);
+}
+
+.button__icon {
+  padding: var(--spacing__sm);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Inputs */
+input {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: text;
+}
+
+.input__small {
+  padding: calc(var(--spacing__sm) - 0.2rem) calc(var(--spacing__md) - 0.3rem);
+}
+
+input {
+  padding: var(--spacing__sm) var(--spacing__md);
+}
+
+.input__large {
+  padding: calc(var(--spacing__md) - 0.3rem) var(--spacing__lg);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Textareas */
+.textarea__default__styles {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: text;
+  padding: var(--spacing__md) var(--spacing__lg);
+  resize: both;
+  overflow: auto;
+}
+
+.textarea__disabled__resize {
+  resize: none;
+}
+
+.textarea__small {
+  padding: calc(var(--spacing__sm) - 0.2rem) calc(var(--spacing__md) - 0.3rem);
+}
+
+.textarea__medium {
+  padding: var(--spacing__sm) var(--spacing__md);
+}
+
+.textarea__large {
+  padding: calc(var(--spacing__md) - 0.3rem) var(--spacing__lg);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Selects */
+.select__default__styles {
+  display: inline-block;
+  width: 100%;
+  font-size: calc(var(--font-size__md) - 0.2rem);
+  padding: var(--spacing__md) var(--spacing__lg);
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+}
+
+.select__small {
+  padding: calc(var(--spacing__sm) - 0.2rem) calc(var(--spacing__md) - 0.3rem);
+}
+
+.select__medium {
+  padding: var(--spacing__sm) var(--spacing__md);
+}
+
+.select__large {
+  padding: calc(var(--spacing__md) - 0.3rem) var(--spacing__lg);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Spans */
+.span__default__styles {
+  display: inline;
+  font-size: inherit;
+  white-space: normal;
+  vertical-align: baseline;
+  border: none;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Loaders */
+.loader__default__styles {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Labels */
+.label__default__styles {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  background: none;
+  text-align: left;
+  white-space: nowrap;
+  user-select: none;
+  width: 100%;
+}
+
+.label__bold {
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Text */
+.text__default__styles {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  hyphens: auto;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.text__center {
+  text-align: center;
+}
+
+.text__right {
+  text-align: right;
+}
+
+.text__uppercase {
+  text-transform: uppercase;
+}
+
+.text__lowercase {
+  text-transform: lowercase;
+}
+
+.text__capitalize {
+  text-transform: capitalize;
+}
+
+.text__bold {
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Checkbox - Radio */
+.option__default__styles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing__lg);
+  padding: var(--spacing__sm);
+  align-items: flex-start;
+  transition: all var(--transition__normal);
+}
+
+.option__default__styles input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  top: 0;
+}
+
+.option__default__styles span,
+.option__default__styles label {
+  cursor: pointer;
+}
+
+.option__default__styles input:focus + span {
+  outline: 2px solid var(--color__primary);
+  /* Indicador de foco */
+  outline-offset: 2px;
+}
+
+.option__radio span,
+.option__radio span::before {
+  border-radius: var(--border-radius__full);
+}
+
+.option__spacing__small {
+  gap: var(--spacing__sm);
+}
+
+.option__spacing__medium {
+  gap: var(--spacing__md);
+}
+
+.option__default__styles div:hover {
+  background-color: #fbfbfb;
+  border-radius: var(--border-radius__lg);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* Tags */
+.tag__default__styles {
+  gap: var(--spacing__sm);
+  min-height: var(--spacing__lg);
+}
+
+.tag__default__styles:hover {
+  opacity: 0.8;
+  filter: brightness(1.1);
+}
+
+.tag__small {
+  padding: var(--spacing__xs) var(--spacing__sm);
+  border-radius: var(--border-radius__sm);
+}
+
+.tag__medium {
+  padding: calc(var(--spacing__sm) - 0.13rem) calc(var(--spacing__md) - 0.25rem);
+  border-radius: var(--border-radius__md);
+}
+
+.tag__large {
+  padding: var(--spacing__sm) var(--spacing__md);
+  border-radius: calc(var(----border-radius__lg) - 0.15rem);
+}
+
+.tag__standar {
+  font-size: 1rem;
+}
+
+.tag__discrete {
+  font-size: 0.75rem;
+}
