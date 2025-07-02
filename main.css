@@ -46,7 +46,7 @@
 /* === POST === */
 .post {
   background-color: #000;
-  width: 100%;
+  width: 1080px;
   max-width: 1080px;
   aspect-ratio: 1 / 1;
   position: relative;
@@ -88,6 +88,7 @@
 
 .post__text {
   font-family: var(--font__primary);
+  white-space: pre-line;
 }
 
 .post__img {
@@ -104,6 +105,7 @@
   right: 29px;
   width: 110px;
   height: 165px;
+  opacity: 0.3;
 }
 
 /* === TOOLBAR === */
@@ -160,6 +162,11 @@
   border: none;
   background: transparent;
   color: var(--color__secondary__liso);
+}
+
+input[type="radio"] {
+  aspect-ratio: 1/1;
+  width: auto;
 }
 
 .input__tool input:focus,
