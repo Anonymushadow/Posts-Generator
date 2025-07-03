@@ -4,7 +4,7 @@
 :root {
   /* Font */
   --font__primary: 'Lora', serif;
-  --font__secondary: 'CinzelDecorative', serif;
+  --font__secondary: 'Cinzel Decorative', cursive;
 
   --font-size__h1: clamp(32px, 7vw, 74px);
   --font-size__h2: clamp(28px, 5vw, 47px);

@@ -1,32 +1,6 @@
 /* =============================== */
 /*         FONT-FAMILY             */
 /* =============================== */
-@font-face {
-  font-family: 'CinzelDecorative';
-  src: url('./fonts/CinzelDecorative-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'CinzelDecorative';
-  src: url('./fonts/CinzelDecorative-Bold.ttf') format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: 'Lora';
-  src: url('./fonts/Lora-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lora';
-  src: url('./fonts/Lora-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
 
 * {
   font-family: var(--font__primary);

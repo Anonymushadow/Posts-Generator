@@ -75,7 +75,11 @@ function svgToImage(svgString) {
 }
 
 downloadBtn.addEventListener("click", async () => {
+  // Esperar que todas las fuentes estén cargadas antes de capturar
+  await document.fonts.ready;
+
   const posts = document.querySelectorAll(".post");
+
   const zip = new JSZip();
   let count = 1;
 
