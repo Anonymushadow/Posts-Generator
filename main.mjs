@@ -55,12 +55,54 @@ downloadBtn.addEventListener("click", async () => {
   let count = 1;
 
   for (const post of posts) {
-    // Clonar el post para ocultar el botón delete sin modificar el original
+    // Clonar el post para exportar sin modificar el original
     const clone = post.cloneNode(true);
-    const deleteBtn = clone.querySelector(".post__delete");
-    if (deleteBtn) deleteBtn.remove();
 
-    // Crear contenedor temporal invisible
+    // ✅ Reemplazar elementos con texto degradado por SVG convertidos en <img>
+    const gradientTextEls = clone.querySelectorAll(".gradient__primary, .gradient__secondary");
+
+    for (const el of gradientTextEls) {
+      const text = el.textContent.trim();
+      const fontSize = parseInt(window.getComputedStyle(el).fontSize) || 60;
+      const fontFamily = window.getComputedStyle(el).fontFamily;
+      const isPrimary = el.classList.contains("gradient__primary");
+      const gradientColors = isPrimary
+        ? ["#1b0033", "#4e0789", "#1b0033"]
+        : ["#7d7d7d", "#e8e8e8", "#7d7d7d"];
+
+      // detectar alineación
+      const textAlign = window.getComputedStyle(el).textAlign;
+      const textAnchor = textAlign === "left" ? "start" : textAlign === "right" ? "end" : "middle";
+      const xPos = textAlign === "left" ? 0 : textAlign === "right" ? 1080 : 540;
+
+      const svgString = createGradientSVGText(
+        text,
+        1080,
+        fontSize,
+        `grad${count}`,
+        gradientColors,
+        fontFamily,
+        textAnchor,
+        xPos
+      );
+
+      const svgBlob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(svgBlob);
+      const img = new Image();
+      img.src = url;
+      img.style.width = "100%";
+
+      await new Promise((resolve) => {
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+      });
+
+      el.replaceWith(img);
+    }
+
+    // Envolver en un contenedor invisible
     const wrapper = document.createElement("div");
     wrapper.style.position = "fixed";
     wrapper.style.top = "-10000px";
@@ -69,7 +111,7 @@ downloadBtn.addEventListener("click", async () => {
     wrapper.appendChild(clone);
     document.body.appendChild(wrapper);
 
-    // Capturar imagen con html2canvas
+    // Captura con html2canvas
     const canvas = await html2canvas(clone, { backgroundColor: null });
     const dataUrl = canvas.toDataURL("image/png");
     const base64 = dataUrl.split(",")[1];
@@ -80,7 +122,41 @@ downloadBtn.addEventListener("click", async () => {
     count++;
   }
 
-  // Generar ZIP y descargar
+  // Descargar ZIP
   const content = await zip.generateAsync({ type: "blob" });
   saveAs(content, "posts.zip");
 });
+
+function createGradientSVGText(
+  text,
+  width = 1080,
+  fontSize = 60,
+  gradientId = "grad1",
+  gradientColors = ["#1b0033", "#4e0789", "#1b0033"],
+  fontFamily = "'Cinzel Decorative', serif",
+  textAnchor = "middle",
+  xPos = 540
+) {
+
+  const stops = gradientColors.map((color, i) => {
+    const offset = (i / (gradientColors.length - 1)) * 100;
+    return `<stop offset="${offset}%" stop-color="${color}" />`;
+  }).join("");
+
+  const escapedText = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  return `
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${fontSize + 30}">
+  <defs>
+    <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="0%" y2="100%">
+      ${stops}
+    </linearGradient>
+  </defs>
+  <text x="${xPos}" y="${fontSize}" text-anchor="${textAnchor}" font-size="${fontSize}" fill="url(#${gradientId})" font-family="${fontFamily}" font-weight="bold">
+    ${escapedText}
+  </text>
+</svg>`;
+}
