@@ -17,7 +17,8 @@ export const Post = ({ title, text, img, id, type, align }) => {
 
   const textEl = document.createElement("div");
   textEl.classList.add("post__text", "gradient__secondary", `align__${align}`);
-  textEl.textContent = text;
+  const realText = text.replace(/\\n/g, "\n");
+  textEl.textContent = realText;
 
   const imgEl = document.createElement("img");
   imgEl.classList.add("post__img");
